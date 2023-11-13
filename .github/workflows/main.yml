@@ -23,9 +23,3 @@ jobs:
 
       - name: check-quality
         run: pylint main.py
-
-  unit-tests:
-
-  build:
-
-  deploy:
