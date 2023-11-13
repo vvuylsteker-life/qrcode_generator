@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  quality:
+    name: check-quality
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout-repository
+        uses: actions/checkout@v4
+
+      - name: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: install-dependencies
+        run: pip install -r ./requirements.txt
+
+      - name: check-quality
+        run: pylint main.py
+
+  unit-tests:
+
+  build:
+
+  deploy:
