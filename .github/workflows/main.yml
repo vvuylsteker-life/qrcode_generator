@@ -19,7 +19,6 @@ jobs:
           python-version: "3.11"
 
       - name: install-dependencies
-        run: pip install -r ./requirements-dev.txt ./requirements.txt
-
+        run: pip install -r ./requirements.txt -r ./requirements-dev.txt
       - name: check-quality
         run: pylint main.py
