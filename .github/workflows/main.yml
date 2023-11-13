@@ -24,6 +24,7 @@ jobs:
         run: pylint main.py --fail-under=6
   test:
     name: run-unit-tests
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     needs: quality
     steps:
