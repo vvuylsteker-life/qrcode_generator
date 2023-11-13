@@ -24,5 +24,5 @@ def test_generate_qrcode_base64_special_characters():
     """Test the generation of QR code with base64 encoding with special characters."""
     special_characters = "!@#$%^&*()_+"
     response = client.get(f"/generate_qrcode_base64/{special_characters}")
-    assert response.status_code == 201
+    assert response.status_code == 200
     assert "qrcode_base64" in response.json()
