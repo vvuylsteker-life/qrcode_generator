@@ -1,12 +1,20 @@
-from fastapi import FastAPI, HTTPException, status
-import qrcode
+"""
+This module contains a FastAPI application that generates QR codes from a given secret.
+The QR code is returned as a base64 encoded PNG image.
+"""
 import io
 import base64
+from fastapi import FastAPI, HTTPException, status
+import qrcode
+
 
 app = FastAPI()
 
 @app.get("/generate_qrcode_base64/{secret}")
 async def generate_qrcode_base64(secret: str):
+    """
+        Qrcode generation
+    """
 
     if not secret:
         raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR)
